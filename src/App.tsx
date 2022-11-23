@@ -18,10 +18,15 @@ function App() {
         <DemoTanstackQuery />
         <DemoTanstackQuery />
         <DemoTanstackQuery />
-        <Suspense fallback={<div>SUSPENSE</div>}>
-          <DemoTanstackQuerySuspense />
-          <DemoTanstackQuerySuspense />
-          <DemoTanstackQuerySuspense />
+        <Suspense fallback={<div>SUSPENSE 1</div>}>
+          <div>this shouldn't be suspended</div>
+          <div>this shouldn't be suspended</div>
+          <div>this shouldn't be suspended</div>
+          <Suspense fallback={<div>SUSPENSE 2</div>}>
+            <DemoTanstackQuerySuspense />
+            <DemoTanstackQuerySuspense />
+            <DemoTanstackQuerySuspense />
+          </Suspense>
         </Suspense>
       </div>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
