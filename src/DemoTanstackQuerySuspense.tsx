@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { fetchText } from "./client/textClient";
 import { fetchDate } from "./client/dateClient";
 import { fetchRandom } from "./client/randomClient";
@@ -6,16 +5,16 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function DemoTanstackQuery() {
   const { data: text, isLoading: textLoading } = useQuery({
-    queryKey: ["text-supsense"],
+    queryKey: ["suspense-text"],
     queryFn: fetchText,
     suspense: true,
   });
   const { data: date, isLoading: dateLoading } = useQuery({
-    queryKey: ["date-supsense"],
+    queryKey: ["suspense-date"],
     queryFn: fetchDate,
   });
   const { data: random, isLoading: randomLoading } = useQuery({
-    queryKey: ["random-supsense"],
+    queryKey: ["suspense-random"],
     queryFn: fetchRandom,
   });
 

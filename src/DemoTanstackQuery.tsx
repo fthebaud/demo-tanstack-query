@@ -6,15 +6,15 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function DemoTanstackQuery() {
   const { data: text, isLoading: textLoading } = useQuery({
-    queryKey: ["text-regular"],
+    queryKey: ["text"],
     queryFn: fetchText,
   });
   const { data: date, isLoading: dateLoading } = useQuery({
-    queryKey: ["date-regular"],
+    queryKey: ["date"],
     queryFn: fetchDate,
   });
   const { data: random, isLoading: randomLoading } = useQuery({
-    queryKey: ["random-regular"],
+    queryKey: ["random"],
     queryFn: fetchRandom,
   });
 
